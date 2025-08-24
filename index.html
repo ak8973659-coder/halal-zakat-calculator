@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halal Zakat Calculator 2024 - Accurate Online Zakat Calculation for Muslims</title>
+    <meta name="description" content="Free online Halal Zakat calculator for 2024. Calculate your Zakat accurately according to Islamic principles. Support available for USA, UK, Canada, Australia, India and all Muslim countries.">
+    <meta name="keywords" content="zakat calculator, halal zakat, zakat calculation, islamic calculator, zakat 2024, muslim charity, zakat on gold, zakat on savings, zakat on investments, online zakat, zakat for usa, zakat for uk, zakat for india, zakat for canada, zakat for australia, zakat for dubai, zakat for saudi arabia">
+    <meta name="author" content="Halal Zakat Calculator">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/">
+    <meta property="og:title" content="Halal Zakat Calculator 2024 - Accurate Online Zakat Calculation">
+    <meta property="og:description" content="Calculate your Zakat accurately with our free online Halal Zakat calculator. Supports all currencies and provides detailed breakdown.">
+    <meta property="og:image" content="https://yourdomain.com/zakat-calculator-preview.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourdomain.com/">
+    <meta property="twitter:title" content="Halal Zakat Calculator 2024">
+    <meta property="twitter:description" content="Free online Halal Zakat calculator for accurate Zakat calculation according to Islamic principles.">
+    <meta property="twitter:image" content="https://yourdomain.com/zakat-calculator-preview.jpg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Halal Zakat Calculator",
+      "url": "https://yourdomain.com",
+      "description": "Free online Halal Zakat calculator for accurate Zakat calculation according to Islamic principles.",
+      "applicationCategory": "FinancialApplication",
+      "operatingSystem": "Any",
+      "permissions": "browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Roboto', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f9f0 0%, #e6f3e6 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(to right, #1AA260, #2c9b4d);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .calculator-container {
+            padding: 20px;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1AA260;
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .input-field:focus {
+            border-color: #1AA260;
+            outline: none;
+        }
+        
+        .currency-symbol {
+            position: relative;
+        }
+        
+        .currency-selector {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .currency-selector span {
+            margin-right: 10px;
+            font-weight: 600;
+            color: #1AA260;
+        }
+        
+        .calculate-btn {
+            background: linear-gradient(to right, #1AA260, #2c9b4d);
+            color: white;
+            border: none;
+            padding: 16px;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+        
+        .calculate-btn:hover {
+            background: linear-gradient(to right, #178c54, #258745);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(26, 162, 96, 0.3);
+        }
+        
+        .result-container {
+            background: #f8fff9;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            border: 2px dashed #1AA260;
+            display: none;
+        }
+        
+        .result-container.show {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .result-title {
+            font-size: 18px;
+            color: #1AA260;
+            margin-bottom: 10px;
+        }
+        
+        .zakat-amount {
+            font-size: 42px;
+            font-weight: 700;
+            color: #1AA260;
+            margin: 10px 0;
+        }
+        
+        .donation-section {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .donation-section h3 {
+            color: #1AA260;
+            margin-bottom: 15px;
+            font-size: 22px;
+            text-align: center;
+        }
+        
+        .payment-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .payment-option {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 150px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .payment-option:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+        
+        .payment-option i {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #1AA260;
+        }
+        
+        .payment-details {
+            display: none;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .payment-details.show {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        .payment-details h4 {
+            color: #1AA260;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .account-details {
+            background: #f8fff9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border: 1px dashed #1AA260;
+        }
+        
+        .account-details p {
+            margin: 8px 0;
+            font-family: monospace;
+        }
+        
+        .info-section {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .info-section h3 {
+            color: #1AA260;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        .info-section p {
+            margin-bottom: 15px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .donate-btn, .share-btn {
+            flex: 1;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .donate-btn {
+            background: linear-gradient(to right, #d4af37, #bf9b30);
+            color: white;
+            border: none;
+        }
+        
+        .share-btn {
+            background: white;
+            color: #1AA260;
+            border: 2px solid #1AA260;
+        }
+        
+        .donate-btn:hover {
+            background: linear-gradient(to right, #c19d2b, #aa8928);
+            transform: translateY(-2px);
+        }
+        
+        .share-btn:hover {
+            background: #1AA260;
+            color: white;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 14px;
+            border-top: 1px solid #eee;
+        }
+        
+        .disclaimer {
+            font-size: 12px;
+            margin-top: 10px;
+            color: #999;
+        }
+        
+        .breadcrumb {
+            padding: 10px 20px;
+            background: #f1f8e9;
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .breadcrumb a {
+            color: #1AA260;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 24px;
+            }
+            
+            .input-field {
+                padding: 12px;
+            }
+            
+            .zakat-amount {
+                font-size: 32px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .payment-options {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .payment-option {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="#">Home</a> > <a href="#">Islamic Tools</a> > <a href="#">Zakat Calculator</a>
+        </div>
+        
+        <header>
+            <h1>Halal Zakat Calculator 2024</h1>
+            <p>Calculate your Zakat accurately according to Islamic principles</p>
+        </header>
+        
+        <div class="calculator-container">
+            <div class="currency-selector">
+                <span>Currency:</span>
+                <select id="currencySelect" class="input-field">
+                    <option value="INR">Indian Rupee (₹)</option>
+                    <option value="USD">US Dollar ($)</option>
+                    <option value="EUR">Euro (€)</option>
+                    <option value="GBP">British Pound (£)</option>
+                    <option value="AED">UAE Dirham (د.إ)</option>
+                    <option value="SAR">Saudi Riyal (﷼)</option>
+                    <option value="PKR">Pakistani Rupee (₨)</option>
+                    <option value="CAD">Canadian Dollar ($)</option>
+                    <option value="AUD">Australian Dollar ($)</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label for="cash"><i class="fas fa-money-bill-wave"></i> Cash / Bank Balance</label>
+                <div class="currency-symbol">
+                    <input type="number" id="cash" class="input-field" placeholder="Enter amount">
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label for="gold"><i class="fas fa-gem"></i> Gold / Silver Value (Current Market Value)</label>
+                <div class="currency-symbol">
+                    <input type="number" id="gold" class="input-field" placeholder="Enter amount">
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label for="investments"><i class="fas fa-chart-line"></i> Investments (Stocks / Crypto / Mutual Funds)</label>
+                <div class="currency-symbol">
+                    <input type="number" id="investments" class="input-field" placeholder="Enter amount">
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label for="debts"><i class="fas fa-credit-card"></i> Debts (Deductible)</label>
+                <div class="currency-symbol">
+                    <input type="number" id="debts" class="input-field" placeholder="Enter amount">
+                </div>
+            </div>
+            
+            <button class="calculate-btn" id="calculate">
+                <i class="fas fa-calculator"></i> Calculate Zakat
+            </button>
+            
+            <div class="result-container" id="resultContainer">
+                <p class="result-title">Your Zakat Payable is:</p>
+                <p class="zakat-amount" id="zakatAmount">₹0.00</p>
+                <p>May Allah accept your generosity and reward you abundantly.</p>
+            </div>
+            
+            <div class="donation-section">
+                <h3>Donate Your Zakat</h3>
+                <p>Choose a payment method to donate your Zakat amount:</p>
+                
+                <div class="payment-options">
+                    <div class="payment-option" data-method="upi">
+                        <i class="fas fa-mobile-alt"></i>
+                        <p>UPI</p>
+                    </div>
+                    <div class="payment-option" data-method="bank">
+                        <i class="fas fa-university"></i>
+                        <p>Bank Transfer</p>
+                    </div>
+                    <div class="payment-option" data-method="paypal">
+                        <i class="fab fa-paypal"></i>
+                        <p>PayPal</p>
+                    </div>
+                    <div class="payment-option" data-method="crypto">
+                        <i class="fab fa-bitcoin"></i>
+                        <p>Crypto</p>
+                    </div>
+                </div>
+                
+                <div class="payment-details" id="upiDetails">
+                    <h4>UPI Payment Details</h4>
+                    <p>Scan the QR code or use UPI ID:</p>
+                    <div class="account-details">
+                        <p><strong>UPI ID:</strong> zakat.india@upi</p>
+                        <p><strong>QR Code:</strong> <i class="fas fa-qrcode" style="font-size: 48px;"></i></p>
+                    </div>
+                    <p>After payment, please share screenshot on WhatsApp +91 XXXXX XXXXX for receipt.</p>
+                </div>
+                
+                <div class="payment-details" id="bankDetails">
+                    <h4>Bank Transfer Details</h4>
+                    <div class="account-details">
+                        <p><strong>Account Name:</strong> Halal Zakat Foundation</p>
+                        <p><strong>Account Number:</strong> XXXXXXXXXXXXX</p>
+                        <p><strong>IFSC Code:</strong> SBIN0000000</p>
+                        <p><strong>Bank Name:</strong> State Bank of India</p>
+                        <p><strong>Branch:</strong> New Delhi</p>
+                    </div>
+                    <p>For international transfers:</p>
+                    <div class="account-details">
+                        <p><strong>SWIFT Code:</strong> SBININBBXXX</p>
+                        <p><strong>IBAN:</strong> INXX XXXX XXXX XXXX XXXX XX</p>
+                    </div>
+                </div>
+                
+                <div class="payment-details" id="paypalDetails">
+                    <h4>PayPal Payment</h4>
+                    <p>Click the button below to donate via PayPal:</p>
+                    <div style="text-align: center; margin: 20px 0;">
+                        <!-- Replace with your actual PayPal link -->
+                        <a href="https://www.paypal.com/paypalme/adilkartar0786" style="display: inline-block; background: #0070BA; color: white; border: none; padding: 15px 30px; border-radius: 5px; font-size: 16px; cursor: pointer; text-decoration: none;">
+                            Donate with PayPal
+                        </a>
+                    </div>
+                    <!-- Your PayPal email added here -->
+                    <p>Or send to PayPal email: adilkartar0786@gmail.com</p>
+                </div>
+                
+                <div class="payment-details" id="cryptoDetails">
+                    <h4>Crypto Currency Donation</h4>
+                    <p>Send cryptocurrency to any of these addresses:</p>
+                    <div class="account-details">
+                        <p><strong>Bitcoin (BTC):</strong> 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</p>
+                        <p><strong>Ethereum (ETH):</strong> 0x742d35Cc6634C0532925a3b844Bc454e4438f44e</p>
+                        <p><strong>USDT (ERC20):</strong> 0x742d35Cc6634C0532925a3b844Bc454e4438f44e</p>
+                    </div>
+                    <p>After transaction, please share TXN hash on email zakat.crypto@example.com for receipt.</p>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <h3>What is Zakat?</h3>
+                <p>Zakat is the third pillar of Islam. It is an obligatory act of charity requiring Muslims to donate 2.5% of their qualifying wealth each year to help those in need.</p>
+                <p>Zakat purifies your wealth and is a means of social justice in society, redistributing wealth and helping to alleviate poverty.</p>
+                
+                <h3>Who Should Pay Zakat?</h3>
+                <p>Zakat is obligatory for every Muslim who has reached puberty, is of sound mind, and has wealth above the nisab threshold for one lunar year.</p>
+                
+                <h3>What is Nisab?</h3>
+                <p>Nisab is the minimum amount of wealth a Muslim must possess before they are obliged to pay Zakat. This is typically equivalent to the value of 87.48 grams of gold or 612.36 grams of silver.</p>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="donate-btn">
+                    <i class="fas fa-hand-holding-heart"></i> Donate Now
+                </button>
+                <button class="share-btn" id="shareButton">
+                    <i class="fas fa-share-alt"></i> Share with Friends
+                </button>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Halal Zakat Calculator Online - 2024</p>
+            <p class="disclaimer">This calculator provides an estimate. For precise calculations, please consult with your local Islamic scholar.</p>
+            <p>© 2024 Halal Zakat Calculator. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded'
